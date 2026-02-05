@@ -5,6 +5,7 @@ provider "aws" {
     tags = {
       Owner       = "taco-wagon-team"
       Environment = var.environment
+      Region      = var.region
     }
   }
 }
