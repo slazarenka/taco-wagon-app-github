@@ -38,6 +38,7 @@ jobs:
           echo "::error::Confirmation failed. You must type 'deploy' to confirm."
           exit 1
 
+
   # Deploy selected environment
   deploy:
     name: Deploy ${{ inputs.environment }}
@@ -75,6 +76,7 @@ jobs:
         run: |
           terraform show -json tf.plan > plan.json
           tf-summarize -md plan.json > summary.md
+
 
       # Manual approval step
       - name: Manual Approval

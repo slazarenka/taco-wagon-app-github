@@ -52,6 +52,7 @@ jobs:
           echo "environments=$ENVS" >> $GITHUB_OUTPUT
           echo "Environments to destroy: $ENVS"
 
+
   # Destroy environments in parallel
   destroy:
     name: Destroy ${{ matrix.environment }}
@@ -84,3 +85,4 @@ jobs:
 
       - name: Terraform Destroy
         run: terraform destroy -var-file="./environments/${{ matrix.environment }}.tfvars" -auto-approve
+
